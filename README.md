@@ -1,4 +1,4 @@
-# Proyecto Final. Python II
+#  Proyecto Final. Python II
 
 ## Analisis de expresion diferencial de carcinomas lobulillar y tubular de individuos afroamericanos 
 
@@ -30,7 +30,67 @@ Realizar un analisis de expresion diferencial, comparando datos de expresion de 
 
 ### Resultados 
 
-Tras analizar los datos de expresión se encontró que un total de 225 proteínas se encuentran sobreexpresadas respecto al control, en los archivos de cáncer utilizados. Además al emplear el T-test se observó que de un total de 20 archivos (correspondientes a cáncer) descargados solo 17 presentaron diferencias significativas con P-values menores a .05 y T-values mayores a |2.00|.
+1. Se descargaron 20 archivos de expresion de la base de datos The Cancer Genome Atlas Program, con las cuentas crudas para al rededor de 20,000 genes representados con el ID de Ensembl, por lo tanto se uso el modulo Preparacion_archivos para modificar el formato, obtener el nombre real del gen y normalizar los datos de expresion. Se obtuvieron los archivos con el nombre del gen y los datos normalizados a TPM.  
+
+​			                              		   	![](/home/rodrigo/Escritorio/archivo_crudo.jpeg)					
+
+​														Fig 1. Archivo con cuentas crudas
+
+
+
+![](/home/rodrigo/Escritorio/archivo_norm.jpeg)
+
+  											  Fig 2. Archivo con cuentas normalizadas 
+
+
+
+2. Posteriormente se hizo un T-test para comprobar que los datos observados tienen p-values y T-values y poder rechazar la hipotesis de que la varianza entre los datos del control y del cancer no es significativa. Se realizo entre el control y cada uno de los 20 archivos y solo 17 de estos pasaron la prueba y se utilizaron en las siguientes pruebas. 
+
+   
+
+​		                               ![](/home/rodrigo/Escritorio/tabla_pvalue.jpeg)      
+
+ 									  Fig 3. Datos del T-test para cada archivo
+
+
+
+3. Con los 17 archivos que pasaron la prueba se realizo el modulo D_Analysis para identificar los genes que mas se expresaron en estos archivos. Los resultados se almacenaron en el archivo most_expressed_genes, en este archivo se tienen los nombres de los genes y su nivel de expresion, pero debido a que son los resultados de todos los archivos, era necesario eliminar las repeticiones y utilizar una sola copia del gen para crear el *core transcriptome*.  El *core transcriptome* se almacena en un archivo nuevo, donde solo podemos ver el nombre de los genes sobreexpresados compartidos entre los 17 archivos. En total nuestro *core transcriptome* esta formado por 217 genes 
+
+​											![](/home/rodrigo/Escritorio/most2.jpeg)	
+
+​							    Fig 4. Primeros 15 elementos del archivo most_expressed_genes
+
+
+
+​							                       				![](/home/rodrigo/Escritorio/core.jpeg)
+
+ 								         Fig 5. Primeros 15 elementos del archivo core
+
+
+
+4. A partir del archivo most_expressed_genes se grafico la cantidad de genes que estan mas repetidos entre los archivos, aquellos que se encuentran en 15, 16 y 17 muestras. 
+
+​		![](/home/rodrigo/PycharmProjects/pythonProject/output/Genes_repetidos_mas_de_15_veces.png)
+
+Fig 6. Cantidad de genes con mayor representacion entre las muestras.
+
+
+
+5.  Tambien se graficaron los niveles de expresion de 10 de los genes que se encontraron en las 17 muestras
+
+![](/home/rodrigo/PycharmProjects/pythonProject/output/expresion_genes_mas_conservados.png)
+
+   Fig 7. Muestra los niveles de expresion de 10 genes que se encontraron en todas las muestras 
+
+
+
+6. Por ultimo se muestran los niveles de expresion para cada uno de los genes anteriores. 
+
+   ![](/home/rodrigo/PycharmProjects/pythonProject/output/expresion_gen_CAPG_17.png)
+
+​				Fig 8. Se muestra la expresion de uno solo de los genes. 
+
+
 
 
 ### Conclusion
