@@ -10,7 +10,7 @@ AUTHOR
         Adrian Prieto Castellanos <adrianpc@lcg.unam.mx>
 
 DESCRIPTION
-        Este programa contiene una funcion que retorna una tabla con
+        Este programa contiene una función que retorna una tabla con
         los valores T y P, para cada par de archivos paciente:control
 
 CATEGORY
@@ -29,7 +29,7 @@ import pandas as pd
 from scipy.stats import ttest_rel
 from tabulate import tabulate
 
-#Definimos la funcion que realiza el T-test a los subsets de datos
+#Definimos la función que realiza el T-test a los subsets de datos
 def stats():
 
     #Creamos una lista con los nombres de los archivos
@@ -50,9 +50,9 @@ def stats():
     file_c = open('../data/Control.txt')
     lines_c = file_c.readlines()
 
-    #Se obtienen los valores de expresion de los genes para cada archivo,
+    #Se obtienen los valores de expresión de los genes para cada archivo,
     # y posteriormente se guardan en un array de modo que sea posible
-    # la realizacion del T-test. El resultado del Ttest se guarda en una lista
+    # la realización del T-test. El resultado del Ttest se guarda en una lista
     for i in range(0,len(file_list)):
         file_p = open(file_list[i])
         lines_p = file_p.readlines()
