@@ -4,41 +4,41 @@
 
 ### Integrantes del equipo. 
 
-- Rodrigo Daniel Hernandez Barrera [rodrigoh@lcg.unam.mx](mailto:rodrigoh@lcg.unam.mx) 
+- Rodrigo Daniel Hernández Barrera [rodrigoh@lcg.unam.mx](mailto:rodrigoh@lcg.unam.mx) 
 - Victor Jesus Enriquez Castro [victorec@lcg.unam.mx](mailto:victorec@lcg.unam.mx)
 - Adrian Prieto Castellanos [adrianpc@lcg.unam.mx](mailto:adrianpc@lcg.unam.mx)
-- Mateo Maya Martinez [mateom@lcg.unam.mx](mailto:mateom@lcg.unam.mx)
+- Mateo Maya Martínez [mateom@lcg.unam.mx](mailto:mateom@lcg.unam.mx)
 
 
 
 ### Introducción.
 
-El cáncer de mama es el tipo más común de cáncer a nivel mundial, se trata de una enfermedad altamente heterogénea lo que tiene un gran impacto en la respuesta al tratamiento y el resultado clínico.
+El cáncer de mama es el tipo más común de cáncer a nivel mundial, se trata de una enfermedad altamente heterogénea, por esta razón tiene un gran impacto en la respuesta al tratamiento y el resultado clínico.
 Las terapias dirigidas disponibles actualmente se aprovechan de la sobreexpresión de los receptores ER (Estrogenic Receptor alfa), PR (Progesterone Receptor) y HER2 (Human Epidermal Growth Factor 2 receptor).
-debido a esto al momento no hay terapias dirigidas disponibles para tumores que no expresan estos receptores. Por lo que el objetivo de este proyecto es identificar aquellas proteínas que se sobreexpresan en un subset de 20 muestras obtenidas de pacientes con cáncer de mama, con la finalidad de identificar posibles blancos terapéuticos.
+Debido a esto al momento no hay terapias dirigidas disponibles para tumores que no expresan estos receptores. Por lo que el objetivo de este proyecto es identificar aquellas proteínas que se sobreexpresan en un subset de 20 muestras obtenidas de pacientes con cáncer de mama, con la finalidad de identificar posibles blancos terapéuticos.
 
 
 
 ### Objetivo. 
 
-Realizar un analisis de expresion diferencial, comparando datos de expresion de carcinomas lobulillar y tubular contra un control sano, y obtener el *core transcriptome* de las muestras de cancer.
+Realizar un analisis de expresion diferencial, comparando datos de expresion de carcinomas lobulillar y tubular contra un control sano, y obtener el *core transcriptome* de las muestras de cáncer.
 
 
 
 ### Metodologia. 
 
-1. Modulo TCGA_Downloader para descargar  los datos de expresion generados por RNA-Seq desde la base de datos [The Cancer Genome Atlas Program](https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga) (Obtenido de https://www.youtube.com/watch?v=YJxcsm4aJXI)
+1. Módulo TCGA_Downloader para descargar los datos de expresión generados por RNA-Seq desde la base de datos [The Cancer Genome Atlas Program](https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga) (Obtenido de https://www.youtube.com/watch?v=YJxcsm4aJXI)
 
-2. Modulo Preparacion_archivos para modificar el formato de los archivos y para normalizar los datos de expresion, pasando de cuentas crudas a datos TPM (Transcripts per million)
-3. Modulo Ttest para realizar un analisis estadistico que nos muestra la significancia de los datos
-4. Modulo D_Analysis para realizar el analisis de expresion diferencial y obtener el *core transcriptome*. 
+2. Modulo Preparacion_archivos para modificar el formato de los archivos y para normalizar los datos de expresión, pasando de cuentas crudas a archivos TPM (Transcripts per million)
+3. Modulo Ttest para realizar un análisis estadístico que nos muestra la significancia de los datos
+4. Modulo D_Analysis para realizar el análisis de expresión diferencial y obtener el *core transcriptome*. 
 5. Modulo Graphs para graficar los genes que se encontraron en la mayor cantidad de muestras. 
 
 
 
 ### Resultados. 
 
-1. Se descargaron 20 archivos de expresion de la base de datos The Cancer Genome Atlas Program, con las cuentas crudas para al rededor de 20,000 genes representados con el ID de Ensembl, por lo tanto se uso el modulo Preparacion_archivos para modificar el formato, obtener el nombre real del gen y normalizar los datos de expresion. Se obtuvieron los archivos con el nombre del gen y los datos normalizados a TPM.  
+1. Se descargaron 20 archivos de expresión de la base de datos The Cancer Genome Atlas Program, con las cuentas crudas para alrededor de 20,000 genes representados con el ID de Ensembl, por lo tanto se usó el módulo Preparacion_archivos para modificar el formato, obtener el nombre real del gen y normalizar los datos de expresión. Se obtuvieron los archivos con el nombre del gen y los datos normalizados a TPM.  
 
 ​			                              		   	![](/output/archivo_crudo.jpeg)					
 
@@ -52,7 +52,7 @@ Fig 2. Archivo con cuentas normalizadas
 
 
 
-2. Posteriormente se hizo un T-test para comprobar que los datos observados tienen p-values y T-values y poder rechazar la hipotesis de que la varianza entre los datos del control y del cancer no es significativa. Se realizo entre el control y cada uno de los 20 archivos y solo 17 de estos pasaron la prueba y se utilizaron en las siguientes pruebas. 
+2. Posteriormente se hizo un T-test para comprobar que los datos observados tienen p-values y T-values para poder rechazar la hipótesis de que la varianza entre los datos del control y del cáncer no es significativa. Se realizó entre el control y cada uno de los 20 archivos y solo 17 de estos pasaron la prueba y se utilizaron en las siguientes pruebas. 
 
    
 
@@ -62,7 +62,7 @@ Fig 3. Datos del T-test para cada archivo
 
 
 
-3. Con los 17 archivos que pasaron la prueba se realizo el modulo D_Analysis para identificar los genes que mas se expresaron en estos archivos. Los resultados se almacenaron en el archivo most_expressed_genes, en este archivo se tienen los nombres de los genes y su nivel de expresion, pero debido a que son los resultados de todos los archivos, era necesario eliminar las repeticiones y utilizar una sola copia del gen para crear el *core transcriptome*.  El *core transcriptome* se almacena en un archivo nuevo, donde solo podemos ver el nombre de los genes sobreexpresados compartidos entre los 17 archivos. En total nuestro *core transcriptome* esta formado por 217 genes 
+3. Con los 17 archivos que pasaron la prueba se usó el módulo D_Analysis para identificar los genes que más se expresaron en estos archivos. Los resultados se almacenaron en el archivo most_expressed_genes, en este archivo se tienen los nombres de los genes y su nivel de expresión, pero debido a que son los resultados de todos los archivos, era necesario eliminar las repeticiones y utilizar una sola copia del gen para crear el *core transcriptome*.  El *core transcriptome* se almacena en un archivo nuevo, donde solo podemos ver el nombre de los genes sobreexpresados compartidos entre los 17 archivos. En total nuestro *core transcriptome* esta conformado por 217 genes 
 
 ​											![](/output/most2.jpeg)	
 
@@ -76,27 +76,27 @@ Fig 5. Primeros 15 elementos del archivo core
 
 
 
-4. A partir del archivo most_expressed_genes se grafico la cantidad de genes que estan mas repetidos entre los archivos, aquellos que se encuentran en 15, 16 y 17 muestras. 
+4. A partir del archivo most_expressed_genes se graficó la cantidad de genes que están más repetidos entre los archivos, aquellos que se encuentran en 15, 16 y 17 muestras. 
 
 ​		![](/output/Genes_repetidos_mas_de_15_veces.png)
 
-Fig 6. Cantidad de genes con mayor representacion entre las muestras.
+Fig 6. Cantidad de genes con mayor representación entre las muestras.
 
 
 
-5.  Tambien se graficaron los niveles de expresion de 10 de los genes que se encontraron en las 17 muestras
+5.  También se graficaron los niveles de expresión de 10 de los genes que se encontraron en las 17 muestras.
 
 ![](/output/expresion_genes_mas_conservados.png)
 
-  Fig 7. Muestra los niveles de expresion de 10 genes que se encontraron en todas las muestras 
+  Fig 7. Muestra los niveles de expresión de 10 genes que se encontraron en todas las muestras. 
 
 
 
-6. Por ultimo se muestran los niveles de expresion para cada uno de los genes anteriores. 
+6. Por último se muestran los niveles de expresión para cada uno de los genes anteriores. 
 
    ![](/output/expresion_gen_CAPG_17.png)
 
-Fig 8. Se muestra la expresion de uno solo de los genes. 
+Fig 8. Se muestra la expresión de uno solo de los genes. 
 
 
 
