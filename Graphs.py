@@ -308,7 +308,3 @@ def expression_each_gene():
         plt.show()
         i += 1
 
-
-mayores_repeticiones()
-expresion_mayores_repeticiones()
-expression_each_gene()
