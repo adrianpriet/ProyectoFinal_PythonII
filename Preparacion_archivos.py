@@ -3,7 +3,7 @@ NAME
         Preparacion_archivos.py
 
 VERSION
-        1.0
+        2.0
 
 AUTHOR
         Victor Jesus Enriquez Castro  <victorec@lcg.unam.mx>
@@ -58,7 +58,7 @@ def obtener_nombres(ruta_cuentas_crudas,ruta_cuentas_nuevas):
 
 
 
-#Dado que las longitudes son necesarias para normalizar, esta funcion
+#Dado que las longitudes son necesarias para normalizar, esta función
 # genera un lista de genes con su respectiva longitud
 def obtener_longitudes(ruta_gene_list,ruta_gene_lengths):
 	file_o = open(ruta_gene_list) #recibe la ruta del archivo con la lista de genes (nombres)
@@ -66,8 +66,8 @@ def obtener_longitudes(ruta_gene_list,ruta_gene_lengths):
 
 	file_n = open(ruta_gene_lengths,'w')#ruta del archivo que se generara
 
-	# Dado que no todos los ids del archivo estan correctamente anotados,
-	# esta for obtiene las longitudes de los genes de la base de datos Ensenmbl
+	# Dado que no todos los ids del archivo están correctamente anotados,
+	# este for obtiene las longitudes de los genes de la base de datos Ensenmbl
 	# siempre y cuando esten correctamente anotados
 	for line in all_lines:
 		try:
@@ -108,7 +108,7 @@ def normalizacion(ruta_cuentas,ruta_gene_lengths,ruta_ff):
 	
 	rpks = 0
 
-	#Se obtiene la suma de todos los rpks y se divide por un millon
+	#Se obtiene la suma de todos los rpks y se divide por un millón
 	for i in range(0,len(lines_rpks)):
 		rpks += float(lines_rpks[i].split('\t')[1].replace('\n',''))
 		
