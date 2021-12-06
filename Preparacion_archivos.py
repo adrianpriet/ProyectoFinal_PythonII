@@ -20,7 +20,7 @@ INPUT
         Este programa recibe como input una serie de rutas a distintos archivos
 
 GITHUB
-
+	https://github.com/rod13-afk/ProyectoFinal_PythonII/blob/master/Preparacion_archivos.py
 '''
 
 #Importamos las librerias
