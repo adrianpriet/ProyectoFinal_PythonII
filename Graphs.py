@@ -3,7 +3,7 @@ NAME
         Graphs.py
 
 VERSION
-        1.1
+        1.2
 
 AUTHOR
         Rodrigo Daniel Hernández Barrera  <rodrigoh@lcg.unam.mx>
@@ -112,7 +112,7 @@ def mayores_repeticiones():
     # Acceder a los renglones del data frame cuyo número de repeticiones sea mayor a 15 y guardar
     # el número de repeticiones.
     count_rep = []
-    for i in range(15, 21):
+    for i in range(15, 18):
         boolean = df_2["Repeticiones"] == i
         index = boolean[boolean].index
         count_rep.append(len(df_2.iloc[index, :]))
