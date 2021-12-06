@@ -24,7 +24,7 @@ Realizar un analisis de expresion diferencial, comparando datos de expresion de 
 2. Modulo Preparacion_archivos para modificar el formato de los archivos y para normalizar los datos de expresion, pasando de cuentas crudas a datos TPM (Transcripts per million)
 3. Modulo Ttest para realizar un analisis estadistico que nos muestra la significancia de los datos
 4. Modulo D_Analysis para realizar el analisis de expresion diferencial y obtener el *core transcriptome*. 
-5. Modulo ---- para graficar los genes que se encontraron en la mayor cantidad de muestras. 
+5. Modulo Graphs para graficar los genes que se encontraron en la mayor cantidad de muestras. 
 
 
 
