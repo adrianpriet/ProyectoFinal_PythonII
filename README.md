@@ -40,7 +40,7 @@ Realizar un analisis de expresion diferencial, comparando datos de expresion de 
 
 ![](/output/archivo_norm.jpeg)
 
-  											  Fig 2. Archivo con cuentas normalizadas 
+Fig 2. Archivo con cuentas normalizadas 
 
 
 
@@ -50,7 +50,7 @@ Realizar un analisis de expresion diferencial, comparando datos de expresion de 
 
 ​		                               ![](/output/tabla_pvalue.jpeg)      
 
- 									  Fig 3. Datos del T-test para cada archivo
+Fig 3. Datos del T-test para cada archivo
 
 
 
@@ -58,13 +58,13 @@ Realizar un analisis de expresion diferencial, comparando datos de expresion de 
 
 ​											![](/output/most2.jpeg)	
 
-​							    Fig 4. Primeros 15 elementos del archivo most_expressed_genes
+Fig 4. Primeros 15 elementos del archivo most_expressed_genes
 
 
 
 ​							                       				![](/output/core.jpeg)
 
- 								         Fig 5. Primeros 15 elementos del archivo core
+Fig 5. Primeros 15 elementos del archivo core
 
 
 
@@ -80,7 +80,7 @@ Fig 6. Cantidad de genes con mayor representacion entre las muestras.
 
 ![](/output/expresion_genes_mas_conservados.png)
 
-   Fig 7. Muestra los niveles de expresion de 10 genes que se encontraron en todas las muestras 
+  Fig 7. Muestra los niveles de expresion de 10 genes que se encontraron en todas las muestras 
 
 
 
@@ -88,7 +88,7 @@ Fig 6. Cantidad de genes con mayor representacion entre las muestras.
 
    ![](/output/expresion_gen_CAPG_17.png)
 
-​				Fig 8. Se muestra la expresion de uno solo de los genes. 
+Fig 8. Se muestra la expresion de uno solo de los genes. 
 
 
 
