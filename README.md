@@ -1,8 +1,8 @@
-#  Proyecto Final. Python II
+#  Proyecto Final. Python II.
 
-## Analisis de expresion diferencial de carcinomas lobulillar y tubular de individuos afroamericanos 
+## Analisis de expresion diferencial de carcinomas lobulillar y tubular de individuos afroamericanos. 
 
-### Integrantes del equipo 
+### Integrantes del equipo. 
 
 - Rodrigo Daniel Hernandez Barrera [rodrigoh@lcg.unam.mx](mailto:rodrigoh@lcg.unam.mx) 
 - Victor Jesus Enriquez Castro [victorec@lcg.unam.mx](mailto:victorec@lcg.unam.mx)
@@ -11,13 +11,21 @@
 
 
 
-### Objetivo 
+### Introducción.
+
+El cáncer de mama es el tipo más común de cáncer a nivel mundial, se trata de una enfermedad altamente heterogénea lo que tiene un gran impacto en la respuesta al tratamiento y el resultado clínico.
+Las terapias dirigidas disponibles actualmente se aprovechan de la sobreexpresión de los receptores ER (Estrogenic Receptor alfa), PR (Progesterone Receptor) y HER2 (Human Epidermal Growth Factor 2 receptor).
+debido a esto al momento no hay terapias dirigidas disponibles para tumores que no expresan estos receptores. Por lo que el objetivo de este proyecto es identificar aquellas proteínas que se sobreexpresan en un subset de 20 muestras obtenidas de pacientes con cáncer de mama, con la finalidad de identificar posibles blancos terapéuticos.
+
+
+
+### Objetivo. 
 
 Realizar un analisis de expresion diferencial, comparando datos de expresion de carcinomas lobulillar y tubular contra un control sano, y obtener el *core transcriptome* de las muestras de cancer.
 
 
 
-### Metodologia 
+### Metodologia. 
 
 1. Modulo TCGA_Downloader para descargar  los datos de expresion generados por RNA-Seq desde la base de datos [The Cancer Genome Atlas Program](https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga) (Obtenido de https://www.youtube.com/watch?v=YJxcsm4aJXI)
 
@@ -28,7 +36,7 @@ Realizar un analisis de expresion diferencial, comparando datos de expresion de 
 
 
 
-### Resultados 
+### Resultados. 
 
 1. Se descargaron 20 archivos de expresion de la base de datos The Cancer Genome Atlas Program, con las cuentas crudas para al rededor de 20,000 genes representados con el ID de Ensembl, por lo tanto se uso el modulo Preparacion_archivos para modificar el formato, obtener el nombre real del gen y normalizar los datos de expresion. Se obtuvieron los archivos con el nombre del gen y los datos normalizados a TPM.  
 
@@ -93,11 +101,11 @@ Fig 8. Se muestra la expresion de uno solo de los genes.
 
 
 
-### Conclusion
+### Conclusión.
 
 Podemos concluir que el core (proteínas sobreexpresadas a través de todos los archivos) se va a reducir de manera gradual, conforme aumentamos el número de archivos analizados. Esto es contundente con estudios previos que demuestran que el cáncer es una enfermedad altamente heterogénea, por lo que a mayor número de muestras menor número de proteínas sobreexpresadas en todas ellas.
 
-### Referencias
+### Referencias.
 
 + Lawrence, R., Perez, E., Hernández, D., Miller, C., Haas, K., & Irie, H. et al. (2021). The Proteomic Landscape of Triple-Negative Breast Cancer. Retrieved 18 November 2021, from.
 + Mudvari, P., Ohshiro, K., Nair, V., Horvath, A., & Kumar, R. (2013). Genomic Insights into Triple-Negative and HER2-Positive Breast Cancers Using Isogenic Model Systems. Plos ONE, 8(9), e74993. https://doi.org/10.1371/journal.pone.0074993
