@@ -307,8 +307,3 @@ def expression_each_gene():
         plt.title('Nivel de expresion del gen ' + str(random_genes[i]))
         plt.show()
         i += 1
-
-
-mayores_repeticiones()
-expresion_mayores_repeticiones()
-expression_each_gene()
