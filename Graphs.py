@@ -3,7 +3,7 @@ NAME
         Graphs.py
 
 VERSION
-        1.0
+        1.1
 
 AUTHOR
         Rodrigo Daniel Hernández Barrera  <rodrigoh@lcg.unam.mx>
@@ -118,9 +118,8 @@ def mayores_repeticiones():
         count_rep.append(len(df_2.iloc[index, :]))
 
     # Graficar el pie chart y darle formato.
-    desfase = (0, 0, 0, 0, 0, 0.1)
-    plt.pie(count_rep, labels=['15 repeticiones', '16 repeticiones', '17 repeticiones', '18 repeticiones', '19 repeticiones',
-                    '20 repeticiones'], explode=desfase, colors=['#fd411e', '#ffc512', '#15b01a', '#2ee8bb', '#276ab3', '#750851'],
+    desfase = (0, 0, 0.1)
+    plt.pie(count_rep, labels=['15 repeticiones', '16 repeticiones', '17 repeticiones'], explode=desfase, colors=['#2ee8bb', '#276ab3', '#750851'],
                     autopct="%0.1f %%")
 
     plt.title('Genes repetidos mas de 15 veces')
@@ -182,7 +181,7 @@ def expresion_mayores_repeticiones():
 
     # Determinar los genes que están en 20 muestras y guardarlos.
     for i in range(0, len(value)):
-        if value[i] == 20:
+        if value[i] == 17:
             name_1.append(name[i])
 
     # Tomar una muestra aleatoria de diez genes
@@ -202,10 +201,10 @@ def expresion_mayores_repeticiones():
         endlist[index % n].append(item)
 
     # Graficar.
-    x = np.arange(1, 21, 1)
-    plt.xlim(1, 21)
+    x = np.arange(1, 18, 1)
+    plt.xlim(1, 18)
     default_x_ticks = range(len(x))
-    plt.xticks(np.arange(0, 21, step=1))
+    plt.xticks(np.arange(0, 18, step=1))
 
     for lista in endlist:
         y = lista
@@ -272,7 +271,7 @@ def expression_each_gene():
 
     # Determinar los genes que están en 20 muestras y guardarlos.
     for i in range(0, len(value)):
-        if value[i] == 20:
+        if value[i] == 17:
             name_1.append(name[i])
 
     # Tomar una muestra aleatoria de diez genes
@@ -292,15 +291,15 @@ def expression_each_gene():
         endlist[index % n].append(item)
 
     # Graficar.
-    x = np.arange(1, 21, 1)
+    x = np.arange(1, 18, 1)
 
     i = 0
     for lista in endlist:
         y = lista
 
-        plt.xlim(1, 21)
+        plt.xlim(1, 18)
         default_x_ticks = range(len(x))
-        plt.xticks(np.arange(0, 21, step=1))
+        plt.xticks(np.arange(0, 18, step=1))
 
         plt.bar(x, y, color='#ff5b00')
         plt.xlabel('Numero de muestra')
