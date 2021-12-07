@@ -94,7 +94,7 @@ Fig 6. Cantidad de genes con mayor representación entre las muestras.
 
 6. Por último se muestran los niveles de expresión para cada uno de los genes anteriores. 
 
-   ![](/output/expresion_gen_CAPG_17.png)
+   ![](/output/expresion_gen_CHPF2_17.png)
 
 Fig 8. Se muestra la expresión de uno solo de los genes. 
 
