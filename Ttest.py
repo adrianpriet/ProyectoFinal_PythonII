@@ -87,3 +87,5 @@ def stats():
     statistics = pd.Series(datos,
                            index=ids,
                            name='Estadisticas')
+ #Se retorna una tabla generada a partir de una Serie
+    return(tabulate(statistics,headers=header,tablefmt='fancy_grid'))
