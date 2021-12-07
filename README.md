@@ -102,8 +102,13 @@ Fig 8. Se muestra la expresión de uno solo de los genes.
 
 
 ### Conclusión.
-
-Podemos concluir que el core (proteínas sobreexpresadas a través de todos los archivos) se va a reducir de manera gradual, conforme aumentamos el número de archivos analizados. Esto es contundente con estudios previos que demuestran que el cáncer es una enfermedad altamente heterogénea, por lo que a mayor número de muestras menor número de proteínas sobreexpresadas en todas ellas.
+Se encontró sobreexpresión de CD74, CAPG y CSDE1 entre otras proteínas, para estos genes se observó que las funciones asociadas son la presentación de antígenos,
+la limitación de macrófagos y la reprogramación traslacional, respectivamente, de esta manera podemos concluir que la sobreexpresión de estos genes esta asociada 
+con procesos como la transición epitelio-mesenquimal mediante la regulación de estructuras citoplasmáticas (CD74) o la reprogramación celular mediante el cambio 
+del destino de míltiples ARNs (CAPG). 
+Además esperaríamos que al incluir más archivos en el análisis el core transcriptome se reduzca de manera gradual, esta observación es contundente con estudios 
+previos que demuestran que el cáncer es una enfermedad altamente heterogénea, por lo que a mayor número de muestras menor número de proteínas sobreexpresadas en 
+todas ellas.
 
 ### Referencias.
 
