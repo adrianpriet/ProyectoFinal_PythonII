@@ -1,42 +1,3 @@
-'''
-NAME
-        Graphs.py
-
-VERSION
-        1.2
-
-AUTHOR
-        Rodrigo Daniel Hernández Barrera  <rodrigoh@lcg.unam.mx>
-        Mateo Maya Martínez <mateom@lcg.unam.mx>
-
-DESCRIPTION
-        Este módulo trabaja con el archivo most_expressed_genes que puede ser generado con el
-        módulo D_Analysis. Contiene 3 funciones, la primera genera una gráfica de pastel que muestra
-        la cantidad de genes que se sobreexpresaron en más muestras. La segunda función grafica
-        los niveles de expresión para 10 de los genes sobreexpresados que se encontraron en todas las
-        muestras. La tercera función hace una gráfica de barras con los 20 niveles de expresión para
-        cada uno de 10 genes que estan sobreexpresados en todas las muestras.
-
-CATEGORY
-        Module
-
-USAGE
-        Para usar este modulo se debe:
-        importar el paquete:
-            import Graphs
-        y llamar cada una de las funciones:
-            Graphs.expression_each_gene()
-
-INPUT
-        Este programa recibe como input un archivo de expresión génica normalizado.
-
-OUTPUT
-        Solo genera las imágenes
-
-GITHUB
-        https://github.com/rod13-afk/ProyectoFinal_PythonII/blob/master/Graphs.py
-'''
-
 
 # Importación de librerías
 import pandas as pd
@@ -185,11 +146,11 @@ def expresion_mayores_repeticiones():
             name_1.append(name[i])
 
     # Tomar una muestra aleatoria de diez genes
-    random_genes = random.sample(name_1, 10)
+    genes = name_1[0:10]
 
     # Guardar los valores de expresión de los genes aleatorios.
     expression_list = []
-    for gen in random_genes:
+    for gen in genes:
         for i in range(0, len(name_gene_most_expressed)):
             if gen == name_gene_most_expressed[i]:
                 expression_list.append(float(expression_gene_most_expressed[i].strip('\n')))
@@ -210,7 +171,7 @@ def expresion_mayores_repeticiones():
         y = lista
         plt.plot(x, y, marker='.')
 
-    plt.legend(random_genes)
+    plt.legend(genes)
     plt.xlabel('Numero de muestra')
     plt.ylabel('Nivel de expresion')
     plt.title('Nivel de expresion de 10 de los genes mas conservados')
@@ -269,20 +230,23 @@ def expression_each_gene():
     # Inicializar la lista que guardarán el nombre de cada gen.
     name_1 = []
 
-    # Determinar los genes que están en 20 muestras y guardarlos.
+    # Determinar los genes que están en 17 muestras y guardarlos.
     for i in range(0, len(value)):
         if value[i] == 17:
             name_1.append(name[i])
 
     # Tomar una muestra aleatoria de diez genes
-    random_genes = random.sample(name_1, 10)
+    genes = name_1[0:10]
+    # print(genes)
 
     # Guardar los valores de expresión de los genes aleatorios.
     expression_list = []
-    for gen in random_genes:
+    for gen in genes:
         for i in range(0, len(name_gene_most_expressed)):
             if gen == name_gene_most_expressed[i]:
                 expression_list.append(float(expression_gene_most_expressed[i].strip('\n')))
+
+    # print(expression_list)
 
     # Separar las listas cada diez elementos.
     n = 10
@@ -304,7 +268,10 @@ def expression_each_gene():
         plt.bar(x, y, color='#ff5b00')
         plt.xlabel('Numero de muestra')
         plt.ylabel('Nivel de expresion')
-        plt.title('Nivel de expresion del gen ' + str(random_genes[i]))
+        plt.title('Nivel de expresion del gen ' + str(name_1[i]))
         plt.show()
         i += 1
 
+
+expresion_mayores_repeticiones()
+expression_each_gene()

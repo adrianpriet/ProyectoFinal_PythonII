@@ -43,13 +43,13 @@ from tabulate import tabulate
 def stats():
 
     #Creamos una lista con los nombres de los archivos
-    file_list = ['../data/e740e34f/e740e34f.tpm', '../data/e023c283/e023c283.tpm', '../data/d7bff2a7/d7bff2a7.tpm',
-                     '../data/c71784ba/c71784ba.tpm', '../data/c592e62e/c592e62e.tpm', '../data/bb804a2f/bb804a2f.tpm',
-                     '../data/b3f7a18b/b3f7a18b.tpm', '../data/a1e80ada/a1e80ada.tpm', '../data/97745843/97745843.tpm',
-                     '../data/743ef32d/743ef32d.tpm', '../data/0e397288/0e397288.tpm', '../data/1e7b2b3b/1e7b2b3b.tpm',
-                     '../data/40a5ed6b/40a5ed6b.tpm', '../data/03d7d46d/03d7d46d.tpm', '../data/4fd836c4/4fd836c4.tpm',
-                     '../data/5d3c2256/5d3c2256.tpm', '../data/7cf82e1d/7cf82e1d.tpm', '../data/8b26a752/8b26a752.tpm',
-                     '../data/8ddc8e8b/8ddc8e8b.tpm', '../data/39d6716f/39d6716f.tpm', ]
+    file_list = ['data/tpms/e740e34f.tpm', 'data/tpms/e023c283.tpm', 'data/tpms/d7bff2a7.tpm',
+                     'data/tpms/c71784ba.tpm', 'data/tpms/c592e62e.tpm', 'data/tpms/bb804a2f.tpm',
+                     'data/tpms/b3f7a18b.tpm', 'data/tpms/a1e80ada.tpm', 'data/tpms/97745843.tpm',
+                     'data/tpms/743ef32d.tpm', 'data/tpms/0e397288.tpm', 'data/tpms/1e7b2b3b.tpm',
+                     'data/tpms/40a5ed6b.tpm', 'data/tpms/03d7d46d.tpm', 'data/tpms/4fd836c4.tpm',
+                     'data/tpms/5d3c2256.tpm', 'data/tpms/7cf82e1d.tpm', 'data/tpms/8b26a752.tpm',
+                     'data/tpms/8ddc8e8b.tpm', 'data/tpms/39d6716f.tpm', ]
 
     #Creamos una serie de listas que nos permiten almacenar datos y dar formato a la tabla
     header = ['ID', 'T-value', 'P-value']
@@ -57,7 +57,7 @@ def stats():
     ids = []
 
     #Se lee el archivo control
-    file_c = open('../data/Control.txt')
+    file_c = open('data/Control.txt')
     lines_c = file_c.readlines()
 
     #Se obtienen los valores de expresion de los genes para cada archivo,
@@ -87,3 +87,5 @@ def stats():
     statistics = pd.Series(datos,
                            index=ids,
                            name='Estadisticas')
+ #Se retorna una tabla generada a partir de una Serie
+    return(tabulate(statistics,headers=header,tablefmt='fancy_grid'))
