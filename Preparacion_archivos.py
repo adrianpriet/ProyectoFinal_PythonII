@@ -40,9 +40,7 @@ GITHUB
 #Importamos las librerias
 from pyensembl import EnsemblRelease
 from os import path
-from Bio import Entrez, SeqIO
-from Bio import ExPASy 
-from Bio import SwissProt
+
 
 #Llamamos el genoma referencia de Ensembl
 data = EnsemblRelease(77)
