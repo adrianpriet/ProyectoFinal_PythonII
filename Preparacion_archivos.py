@@ -45,8 +45,6 @@ from os import path
 #Llamamos el genoma referencia de Ensembl
 data = EnsemblRelease(77)
 
-#Accedemos con nuestro correo
-Entrez.email = "victorec@lcg.unam.mx" 
 
 #Generamos lista de genes (nombre	cuenta)
 def obtener_nombres(ruta_cuentas_crudas,ruta_cuentas_nuevas):
