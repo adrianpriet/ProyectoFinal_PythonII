@@ -78,8 +78,8 @@ def stats():
         for i in range(0,len(lines_c)):
             v_exp_control.append(float(lines_c[i].split('\t')[1].replace('\n','')))
 
-        paciente = pd.array(v_exp_paciente)
-        control = pd.array(v_exp_control)
+        paciente = v_exp_paciente
+        control = v_exp_control
 
         datos.append(ttest_rel(paciente, control))
 
